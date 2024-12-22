@@ -1,6 +1,6 @@
-using GameStore.Domain.Entities.Base;
+using GameStore.Domain.DTOs.ClientContext.Client;
 using System.ComponentModel.DataAnnotations;
-using GameStore.Domain.DTOs.Client;
+using GameStore.Domain.Entities.Base;
 
 namespace GameStore.Domain.Entities.ClientContext
 {
@@ -17,21 +17,23 @@ namespace GameStore.Domain.Entities.ClientContext
         public DateOnly BirthDate { get; private init; }
         [MaxLength(11), MinLength(11, ErrorMessage = "CPF must have 11 characters"), Required]
         public string CPF { get; private init; }
-        public ICollection<Address> Addresses { get; set; }
-
+        public virtual ICollection<Address> Addresses { get; set; }
+        public virtual ICollection<Contact> Contacts { get; set; }
+        public virtual ICollection<Token> Tokens { get; set; }
+        public Client() : base() {}
         public Client(CreateClientDTO client) : base()
         {
-            this.Name = client.Name;
-            this.LastName = client.LastName;
-            this.Email = client.Email;
-            this.Password = client.Password;
-            this.BirthDate = client.BirthDate;
-            this.CPF = client.CPF;
+            Name = client.Name;
+            LastName = client.LastName;
+            Email = client.Email;
+            Password = client.Password;
+            BirthDate = client.BirthDate;
+            CPF = client.CPF;
         }
         public void Update(UpdateClientDTO client)
         {
-            this.Name = client.Name;
-            this.LastName = client.LastName;
+            Name = client.Name;
+            LastName = client.LastName;
             base.Update();
         }
     }

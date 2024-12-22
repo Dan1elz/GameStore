@@ -1,16 +1,15 @@
-using GameStore.Domain.Entities.Base;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using GameStore.Domain.DTOs.Address;
+using GameStore.Domain.DTOs.ClientContext.Address;
+using System.ComponentModel.DataAnnotations;
+using GameStore.Domain.Entities.Base;
 
 namespace GameStore.Domain.Entities.ClientContext
 {
     public class Address : BaseEntity
     {
-
         [ForeignKey("Client"), Required]
-        public Guid ClientId { get; private set; }
-        public Client Client { get; set; }
+        public Guid ClientId { get; private init; }
+        public virtual Client Client { get; set; }
 
         /// <summary>
         /// Descrição
@@ -29,13 +28,13 @@ namespace GameStore.Domain.Entities.ClientContext
         /// </summary>
         [MaxLength(10, ErrorMessage = "Number must have at most 10 characters"), Required]
         public string Number { get; private set; } = string.Empty;
-        
+
         /// <summary>
         /// Bairro
         /// </summary>
         [MaxLength(100, ErrorMessage = "District must have at most 100 characters"), Required]
         public string District { get; private set; } = string.Empty;
-        
+
         /// <summary>
         /// Cidade
         /// </summary>
@@ -59,31 +58,27 @@ namespace GameStore.Domain.Entities.ClientContext
         /// </summary>
         [MaxLength(8, ErrorMessage = "Zip code must have at most 8 characters"), Required]
         public string ZipCode { get; private set; } = string.Empty;
-
-        public Address() : base()
-        {}
-
+        public Address() : base() { }
         public Address(CreateAddresDTO address) : base()
         {
-            this.ClientId = address.Client.Id;
-            this.Client = address.Client;
-            this.Street = address.Street;
-            this.Number = address.Number;
-            this.District = address.District;
-            this.City = address.City;
-            this.State = address.State;
-            this.ZipCode = address.ZipCode;
+            ClientId = address.Client.Id;
+            Client = address.Client;
+            Street = address.Street;
+            Number = address.Number;
+            District = address.District;
+            City = address.City;
+            State = address.State;
+            ZipCode = address.ZipCode;
         }
         public void Update(UpdateAddressDTO address)
         {
-            this.Street = address.Street;
-            this.Number = address.Number;
-            this.District = address.District;
-            this.City = address.City;
-            this.State = address.State;
-            this.ZipCode = address.ZipCode;
+            Street = address.Street;
+            Number = address.Number;
+            District = address.District;
+            City = address.City;
+            State = address.State;
+            ZipCode = address.ZipCode;
             base.Update();
         }
-
     }
 }
