@@ -10,19 +10,19 @@ namespace GameStore.Domain.Entities.Base
         public DateTime UpdatedAt { get; private set; }
         public bool IsDeleted { get; private set; }
 
-        public BaseEntity()
+        protected BaseEntity()
         {
             this.Id = Guid.NewGuid();
             this.CreatedAt = DateTime.Now;
             this.UpdatedAt = DateTime.Now;
             this.IsDeleted = false;
         }
-        public void Update()
+        protected void Update()
         {
             this.UpdatedAt = DateTime.Now;
         }
 
-        public void Delete()
+        protected void Delete()
         {
             this.UpdatedAt = DateTime.Now;
             this.IsDeleted = true;

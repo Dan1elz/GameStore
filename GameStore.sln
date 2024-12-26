@@ -3,7 +3,37 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameStore.Domain", "GameStore.Domain\GameStore.Domain.csproj", "{8C571412-3F5F-4C54-B973-9F4328D86B9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameStore.Infrastructure", "GameStore.Infrastructure\GameStore.Infrastructure.csproj", "{32F7C645-D5D8-4E95-853B-CDB666BB9715}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameStore.CrossCutting", "GameStore.CrossCutting\GameStore.CrossCutting.csproj", "{FA44B385-5788-4772-A22B-4F4580B38DD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameStore.Aplication", "GameStore.Aplication\GameStore.Aplication.csproj", "{AD3ADD48-4473-4A6F-AF9F-DCC9D864F9D9}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8C571412-3F5F-4C54-B973-9F4328D86B9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C571412-3F5F-4C54-B973-9F4328D86B9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C571412-3F5F-4C54-B973-9F4328D86B9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C571412-3F5F-4C54-B973-9F4328D86B9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32F7C645-D5D8-4E95-853B-CDB666BB9715}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32F7C645-D5D8-4E95-853B-CDB666BB9715}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32F7C645-D5D8-4E95-853B-CDB666BB9715}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32F7C645-D5D8-4E95-853B-CDB666BB9715}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA44B385-5788-4772-A22B-4F4580B38DD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA44B385-5788-4772-A22B-4F4580B38DD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA44B385-5788-4772-A22B-4F4580B38DD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA44B385-5788-4772-A22B-4F4580B38DD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD3ADD48-4473-4A6F-AF9F-DCC9D864F9D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD3ADD48-4473-4A6F-AF9F-DCC9D864F9D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD3ADD48-4473-4A6F-AF9F-DCC9D864F9D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD3ADD48-4473-4A6F-AF9F-DCC9D864F9D9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
