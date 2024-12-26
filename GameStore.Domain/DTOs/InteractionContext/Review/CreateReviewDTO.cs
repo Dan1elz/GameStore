@@ -1,6 +1,4 @@
 ﻿namespace GameStore.Domain.DTOs.InteractionContext.Review
 {
-    internal class CreateReviewDTO
-    {
-    }
+    public record CreateReviewDTO(Guid ClientId, Guid ProductId, int Rating, string Comment);
 }

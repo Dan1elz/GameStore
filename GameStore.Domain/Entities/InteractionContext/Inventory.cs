@@ -1,10 +1,11 @@
 ﻿using GameStore.Domain.DTOs.InteractionContext.Inventory;
-using GameStore.Domain.Entities.Base;
-using GameStore.Domain.Entities.ClientContext;
-using GameStore.Domain.Entities.ProductContext;
-using GameStore.Domain.Enum;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using GameStore.Domain.Entities.ProductContext;
+using GameStore.Domain.Entities.ClientContext;
+using GameStore.Domain.Entities.Base;
+using GameStore.Domain.Enum;
+
+using System.ComponentModel.DataAnnotations;
 
 namespace GameStore.Domain.Entities.InteractionContext
 {

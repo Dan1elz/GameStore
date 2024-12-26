@@ -1,6 +1,4 @@
 ﻿namespace GameStore.Domain.DTOs.InteractionContext.Review
 {
-    internal class UpdateReviewDTO
-    {
-    }
+    public record UpdateReviewDTO( int Rating, string Comment);
 }
