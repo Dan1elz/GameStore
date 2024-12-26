@@ -1,4 +1,6 @@
+using GameStore.Domain.Entities.ClientContext;
+
 namespace GameStore.Domain.DTOs.SaleContext.Order
 {
-    public record CreateOrderDTO(Guid ClientId, double TotalPrice);
+    public record CreateOrderDTO(Client Client, double TotalPrice);
 }

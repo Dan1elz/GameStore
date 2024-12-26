@@ -1,7 +1,7 @@
 ﻿using GameStore.Domain.DTOs.ProductContext.ProductCategory;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
 using GameStore.Domain.Entities.Base;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GameStore.Domain.Entities.ProductContext
 {
@@ -18,8 +18,10 @@ namespace GameStore.Domain.Entities.ProductContext
         private ProductCategory() : base() { }
         public ProductCategory(CreateProductCategoryDTO productCategorty) : base()
         {
-            ProductId = productCategorty.ProductId;
-            CategoryId = productCategorty.CategoryId;
+            ProductId = productCategorty.Product.Id;
+            Product = productCategorty.Product;
+            CategoryId = productCategorty.Category.Id;
+            Category = productCategorty.Category;
         }
     }
 }

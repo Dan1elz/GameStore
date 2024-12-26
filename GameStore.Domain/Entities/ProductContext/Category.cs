@@ -1,5 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
-using GameStore.Domain.Entities.Base;
+﻿using GameStore.Domain.Entities.Base;
+using System.ComponentModel.DataAnnotations;
 
 namespace GameStore.Domain.Entities.ProductContext
 {

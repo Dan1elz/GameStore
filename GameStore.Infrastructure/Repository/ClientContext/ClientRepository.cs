@@ -1,7 +1,7 @@
-﻿using GameStore.Domain.Interfaces.Repository.ClientContext;
-using GameStore.Infrastructure.Repository.Base;
-using GameStore.Domain.Entities.ClientContext;
+﻿using GameStore.Domain.Entities.ClientContext;
+using GameStore.Domain.Interfaces.Repository.ClientContext;
 using GameStore.Infrastructure.Context;
+using GameStore.Infrastructure.Repository.Base;
 using Microsoft.EntityFrameworkCore;
 
 namespace GameStore.Infrastructure.Repository.ClientContext

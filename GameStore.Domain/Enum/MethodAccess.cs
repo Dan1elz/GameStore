@@ -1,4 +1,3 @@
-
 namespace GameStore.Domain.Enum
 {
     public enum MethodAccess : byte

@@ -1,5 +1,5 @@
-﻿using GameStore.Domain.Interfaces.Repository.ClientContext;
-using GameStore.Domain.Entities.ClientContext;
+﻿using GameStore.Domain.Entities.ClientContext;
+using GameStore.Domain.Interfaces.Repository.ClientContext;
 using GameStore.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
 

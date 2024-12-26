@@ -1,4 +1,6 @@
-﻿namespace GameStore.Domain.DTOs.ProductContext.GameImage
+﻿using Context = GameStore.Domain.Entities.ProductContext;
+
+namespace GameStore.Domain.DTOs.ProductContext.GameImage
 {
-    public record CreateGameImageDTO(Guid ProductId, string ImageURL, string Description);
+    public record CreateGameImageDTO(Context.Product Product, string ImageURL, string Description);
 }

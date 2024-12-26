@@ -1,8 +1,8 @@
 ﻿using GameStore.Domain.DTOs.ProductContext.Product;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
 using GameStore.Domain.Entities.Base;
 using GameStore.Domain.Enum;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GameStore.Domain.Entities.ProductContext
 {
@@ -10,7 +10,7 @@ namespace GameStore.Domain.Entities.ProductContext
     {
         [ForeignKey("Company"), Required(ErrorMessage = "Please enter the company ID")]
         public Guid CompanyId { get; private init; }
-        public virtual Company Company { get; set; }
+        public virtual Company Company { get; private init; }
 
         [MaxLength(255, ErrorMessage = "Title must have at most 255 characters"), Required(ErrorMessage = "Inform the Title of Product")]
         public string Title { get; private set; } = string.Empty;
@@ -36,7 +36,8 @@ namespace GameStore.Domain.Entities.ProductContext
         private Product() : base() { }
         public Product(CreateProductDTO product) : base()
         {
-            CompanyId = product.CompanyId;
+            CompanyId = product.Company.Id;
+            Company = product.Company;
             Title = product.Title;
             AlternativeTitle = product.AlternativeTitle;
             Description = product.Description;
@@ -48,7 +49,7 @@ namespace GameStore.Domain.Entities.ProductContext
         public void Update(UpdateProductDTO product)
         {
             Title = product.Title;
-            AlternativeTitle = product.AlternativeTitle; 
+            AlternativeTitle = product.AlternativeTitle;
             Description = product.Description;
             ReleaseDate = product.ReleaseDate;
             AgeRenge = product.AgeRenge;

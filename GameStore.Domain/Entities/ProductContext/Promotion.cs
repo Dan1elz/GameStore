@@ -1,7 +1,7 @@
 ﻿using GameStore.Domain.DTOs.ProductContext.Promotion;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
 using GameStore.Domain.Entities.Base;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GameStore.Domain.Entities.ProductContext
 {
@@ -9,7 +9,7 @@ namespace GameStore.Domain.Entities.ProductContext
     {
         [ForeignKey("Product"), Required(ErrorMessage = "Please enter the product ID")]
         public Guid ProductId { get; private init; }
-        public virtual Product Product { get; set; }
+        public virtual Product Product { get; private init; }
 
         [Required(ErrorMessage = "Inform the Promotion Description")]
         public string Description { get; private set; } = string.Empty;
@@ -26,7 +26,8 @@ namespace GameStore.Domain.Entities.ProductContext
         private Promotion() : base() { }
         public Promotion(CreatePromotionDTO promotion) : base()
         {
-            ProductId = promotion.ProductId;
+            ProductId = promotion.Product.Id;
+            Product = promotion.Product;
             Description = promotion.Description;
             Price = promotion.Price;
             StartDate = promotion.StartDate;
