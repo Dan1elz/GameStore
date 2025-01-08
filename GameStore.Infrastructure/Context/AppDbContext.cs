@@ -3,11 +3,14 @@ using GameStore.Domain.Entities.ClientContext;
 using GameStore.Domain.Entities.InteractionContext;
 using GameStore.Domain.Entities.SaleContext;
 using GameStore.Domain.Entities.ProductContext;
+using GameStore.Domain.Entities.AdministratorContext;
 
 namespace GameStore.Infrastructure.Context
 {
     public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(options)
     {
+        public required DbSet<Administrator> Administrator { get; set; }
+        public required DbSet<AdministratorToken> AdministratorToken { get; set; }
         public required DbSet<Token> Token { get; set; }
         public required DbSet<Address> Addresse { get; set; }
         public required DbSet<Client> Client { get; set; }

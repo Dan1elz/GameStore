@@ -12,5 +12,9 @@ namespace GameStore.Infrastructure.Repository.ClientContext
         {
             return await _context.Client.SingleOrDefaultAsync(predicate: u => u.Email == Email && u.Password == Password);
         }
+        public virtual async Task<Client?> VerifyEmail(string Email)
+        {
+            return await _context.Client.SingleOrDefaultAsync(predicate: u => u.Email == Email);
+        }
     }
 }

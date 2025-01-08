@@ -16,7 +16,7 @@ namespace GameStore.Infrastructure.Repository.ClientContext
             await _context.SaveChangesAsync();
         }
 
-        public virtual async Task Dekete(Token token)
+        public virtual async Task Delete(Token token)
         {
             _context.Token.Remove(token);
             await _context.SaveChangesAsync();
