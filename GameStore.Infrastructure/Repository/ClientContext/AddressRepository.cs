@@ -8,5 +8,6 @@ namespace GameStore.Infrastructure.Repository.ClientContext
 {
     public class AddressRepository(AppDbContext context) : BaseRepository<Address>(context), IAddressRepository
     {
+        
     }
 }

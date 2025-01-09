@@ -6,6 +6,7 @@ namespace GameStore.Domain.Entities.ProductContext
 {
     public class Company : BaseEntity
     {
+        #nullable enable
         [MaxLength(255, ErrorMessage = "Name of the company must have at most 255 characters"), Required(ErrorMessage = "Inform the name of the company")]
         public string Name { get; private set; } = string.Empty;
 
@@ -16,7 +17,7 @@ namespace GameStore.Domain.Entities.ProductContext
         public string? Email { get; private set; }
 
         public virtual ICollection<Product> Products { get; set; }
-
+        #pragma warning disable CS8618
         private Company() : base() { }
         public Company(CreateCompanyDTO company) : base()
         {

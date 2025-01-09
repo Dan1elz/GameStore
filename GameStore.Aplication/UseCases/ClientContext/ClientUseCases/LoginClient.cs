@@ -1,7 +1,7 @@
 ﻿using GameStore.Aplication.UseCases.AuthenticationContext.Authentification.Client;
 using GameStore.Domain.Interfaces.Repository.ClientContext;
 
-namespace GameStore.Aplication.UseCases.ClientContext
+namespace GameStore.Aplication.UseCases.ClientContext.ClientUseCases
 {
     public class LoginClient(IClientRepository repository, CreateTokenClient service)
     {

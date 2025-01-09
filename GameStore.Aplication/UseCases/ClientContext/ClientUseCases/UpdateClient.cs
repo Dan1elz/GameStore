@@ -4,7 +4,7 @@ using GameStore.Domain.Entities.ClientContext;
 using GameStore.Domain.DTOs.ClientContext.Client;
 using GameStore.Domain.Interfaces.Repository.ClientContext;
 
-namespace GameStore.Aplication.UseCases.ClientContext
+namespace GameStore.Aplication.UseCases.ClientContext.ClientUseCases
 {
     public class UpdateClient(IClientRepository repository, CreateTokenClient service)
     {
@@ -16,7 +16,7 @@ namespace GameStore.Aplication.UseCases.ClientContext
             var clientToUpdate = await _repository.GetByIdAsync(token.ClientId, ct) ?? throw new Exception("Client not found");
             if (clientToUpdate.Email != _client.Email || clientToUpdate.Password != _client.Password)
                 throw new Exception("Email or password incorrect");
-            
+
             clientToUpdate.Update(new UpdateClientDTO(_client.Name, _client.LastName));
             await _repository.Update(clientToUpdate, ct);
         }

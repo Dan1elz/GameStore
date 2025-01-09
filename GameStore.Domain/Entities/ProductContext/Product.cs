@@ -8,6 +8,7 @@ namespace GameStore.Domain.Entities.ProductContext
 {
     public class Product : BaseEntity
     {
+        #nullable enable
         [ForeignKey("Company"), Required(ErrorMessage = "Please enter the company ID")]
         public Guid CompanyId { get; private init; }
         public virtual Company Company { get; private init; }
@@ -33,7 +34,8 @@ namespace GameStore.Domain.Entities.ProductContext
         [Range(0, double.MaxValue, ErrorMessage = "Price must be greater than or equal to zero"), Required(ErrorMessage = "Inform the Game Price of Product")]
         public double Price { get; private set; }
 
-        private Product() : base() { }
+        #pragma warning disable CS8618 
+        private Product() : base() {}
         public Product(CreateProductDTO product) : base()
         {
             CompanyId = product.Company.Id;

@@ -3,7 +3,7 @@ using GameStore.Domain.DTOs.ClientContext.Client;
 using GameStore.Domain.Entities.ClientContext;
 using GameStore.Domain.Interfaces.Repository.ClientContext;
 
-namespace GameStore.Aplication.UseCases.ClientContext
+namespace GameStore.Aplication.UseCases.ClientContext.ClientUseCases
 {
     public class CreateClient(IClientRepository repository)
     {
