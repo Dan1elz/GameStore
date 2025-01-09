@@ -12,7 +12,7 @@ namespace GameStore.Infrastructure.Context
         public required DbSet<Administrator> Administrator { get; set; }
         public required DbSet<AdministratorToken> AdministratorToken { get; set; }
         public required DbSet<Token> Token { get; set; }
-        public required DbSet<Address> Addresse { get; set; }
+        public required DbSet<Address> Address { get; set; }
         public required DbSet<Client> Client { get; set; }
         public required DbSet<Contact> Contact { get; set; }
         public required DbSet<Cart> Cart { get; set; }

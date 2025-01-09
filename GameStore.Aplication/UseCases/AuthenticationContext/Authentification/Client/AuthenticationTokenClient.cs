@@ -3,7 +3,7 @@ using GameStore.Domain.Interfaces.Repository.ClientContext;
 
 namespace GameStore.Aplication.UseCases.AuthenticationContext.Authentification.Client
 {
-    public class AuthenticationTokenClient(ITokenRepository repository, GenerateToken generate, ValidateToken validate)
+    public class AuthenticationTokenClient(ITokenRepository repository, ValidateToken validate)
     {
         private readonly ITokenRepository _repository = repository;
         private readonly ValidateToken _validate = validate;

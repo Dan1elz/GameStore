@@ -1,7 +1,6 @@
 ﻿using GameStore.Aplication.UseCases.AuthenticationContext.Token;
 using GameStore.Domain.DTOs.ClientContext.Token;
 using GameStore.Domain.Interfaces.Repository.ClientContext;
-using GameStore.Domain.Entities.ClientContext;
 
 namespace GameStore.Aplication.UseCases.AuthenticationContext.Authentification.Client
 {

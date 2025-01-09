@@ -14,10 +14,10 @@ namespace GameStore.Aplication.UseCases.AuthenticationContext.Token
             var key = Encoding.ASCII.GetBytes(_secretKey);
             var tokenConfig = new SecurityTokenDescriptor
             {
-                Subject = new System.Security.Claims.ClaimsIdentity(new Claim[]
-               {
+                Subject = new System.Security.Claims.ClaimsIdentity(
+               [
                     new Claim("Id", id.ToString()),
-               }),
+               ]),
                 Expires = DateTime.UtcNow.AddDays(1),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };

@@ -1,5 +1,6 @@
 using GameStore.Domain.DTOs.ClientContext.Client;
 using GameStore.Domain.Entities.Base;
+using GameStore.Domain.Entities.InteractionContext;
 using System.ComponentModel.DataAnnotations;
 
 namespace GameStore.Domain.Entities.ClientContext
@@ -26,6 +27,10 @@ namespace GameStore.Domain.Entities.ClientContext
         public virtual ICollection<Address> Addresses { get; set; }
         public virtual ICollection<Contact> Contacts { get; set; }
         public virtual ICollection<Token> Tokens { get; set; }
+        public virtual ICollection<Favorite> Favorites { get; set; }
+        public virtual ICollection<Cart> Carts { get; set; }
+        public virtual ICollection<Review> Reviews { get; set; }
+        public virtual ICollection<Inventory> Inventoryes { get; set; }
 
         private Client() : base() { }
         public Client(CreateClientDTO client) : base()

@@ -5,7 +5,7 @@ namespace GameStore.Domain.Interfaces.Repository.ClientContext
 {
     public interface IClientRepository : IRepositoryBase<Client>
     {
-        Task<Client> Login(string Email, string Password);
-        Task<Client?> VerifyEmail(string Email);
+        Task<Client> Login(string Email, string Password, CancellationToken ct);
+        Task<Client?> VerifyEmail(string Email, CancellationToken ct);
     }
 }

@@ -8,9 +8,9 @@ namespace GameStore.Aplication.UseCases.ClientContext
         public readonly IClientRepository _repository = repository;
         public readonly CreateTokenClient _service = service;
 
-        public async Task<string?> Execute(string Email, string Password)
+        public async Task<string?> Execute(string Email, string Password, CancellationToken ct)
         {
-            var login = await _repository.Login(Email, Password) ?? throw new Exception("Email or password incorrect");
+            var login = await _repository.Login(Email, Password, ct) ?? throw new Exception("Email or password incorrect");
             var token = await _service.Execute(login) ?? throw new Exception("Error to create token");
             return token;
         }
