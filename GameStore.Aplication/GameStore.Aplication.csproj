@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <Folder Include="UseCases\InteractionContext\" />
-    <Folder Include="UseCases\ProductContext\" />
     <Folder Include="UseCases\SaleContext\" />
   </ItemGroup>
 

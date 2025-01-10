@@ -1,5 +1,6 @@
 ﻿using GameStore.Domain.DTOs.ProductContext.Product;
 using GameStore.Domain.Entities.Base;
+using GameStore.Domain.Entities.InteractionContext;
 using GameStore.Domain.Enum;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -33,8 +34,12 @@ namespace GameStore.Domain.Entities.ProductContext
 
         [Range(0, double.MaxValue, ErrorMessage = "Price must be greater than or equal to zero"), Required(ErrorMessage = "Inform the Game Price of Product")]
         public double Price { get; private set; }
+        public virtual ICollection<ProductCategory> ProductCategories { get; set; }
+        public virtual ICollection<Review> Reviews { get; set; }
+        public virtual ICollection<GameImage> GameImages { get; set; }
+        public virtual ICollection<Promotion> Promotions { get; set; }
 
-        #pragma warning disable CS8618 
+#pragma warning disable CS8618
         private Product() : base() {}
         public Product(CreateProductDTO product) : base()
         {

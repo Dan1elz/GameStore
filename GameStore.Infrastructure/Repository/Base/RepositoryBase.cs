@@ -23,9 +23,12 @@ namespace GameStore.Infrastructure.Repository.Base
             await _context.SaveChangesAsync(ct);
         }
 
-        public virtual async Task<IEnumerable<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken ct)
+        public virtual async Task<IEnumerable<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>> predicate, int offset, int limit, CancellationToken ct)
         {
-            return await _context.Set<TEntity>().Where(predicate).ToListAsync(ct);
+            return await _context.Set<TEntity>().Where(predicate)
+                .Skip(offset)
+                .Take(limit)
+                .ToListAsync(ct);
         }
         
         public virtual async Task<TEntity?> GetAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken ct)

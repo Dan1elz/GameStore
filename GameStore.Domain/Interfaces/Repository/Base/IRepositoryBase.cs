@@ -6,7 +6,7 @@ namespace GameStore.Domain.Interfaces.Repository.Base
         #nullable enable
         // Métodos de leitura
         Task<TEntity?> GetByIdAsync(Guid id, CancellationToken ct);
-        Task<IEnumerable<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken ct);
+        Task<IEnumerable<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>> predicate, int offset, int limit, CancellationToken ct);
         Task<TEntity?> GetAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken ct);
 
         // Métodos de escrita
